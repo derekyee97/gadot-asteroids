@@ -1,34 +1,42 @@
-extends RigidBody2D
+extends "res://Script Official/Weightless/Weightless.gd"
 
+#break down to smaller pieces so no large
+var asteroidSmall = preload("res://Scenes/Asteroid Scene/AsteroidSmall .tscn")
+var asteroidMedium = preload("res://Scenes/Asteroid Scene/AsteroidMedium.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-onready var asteroidSprite= get_node("Sprite_Asteroid")
-onready var viewPort= get_viewport().get_visible_rect().size 
+export(float) var explodeForce=300
 
-# Called when the node enters the scene tree for the first time.
+signal boom #explode
+
+#asteroid 3 sizes 
+enum Size {
+	SMALL,MEDIUM,LARGE
+}
+
+export(Size) var size= Size.LARGE
+var asteroidRadius
+
 func _ready():
-	pass # Replace with function body.
-
-#called before physics applied
-func _integrate_forces(state):
-	var size=asteroidSprite.texture.get_size() * asteroidSprite.scale #scales to image setup in game and not file
-	var trans=state.get_transform()
-	#horizontal 
-	if trans.origin.x< -size.x/2: #if middle of object off screen. half cause sprite at origin 
-		trans.origin.x += viewPort.x + size.x #of further to the left, move to right 
-	elif trans.origin.x > viewPort.x + size.x/2:
-		trans.origin.x -= viewPort.x + size.x
-	#vertical
-	elif trans.origin.y< -size.x/2: #if middle of object off screen. half cause sprite at origin 
-		trans.origin.y += viewPort.y + size.y #of further to the left, move to right 
-	elif trans.origin.y > viewPort.y + size.y/2:
-		trans.origin.y -= viewPort.y + size.y
-		
-	state.set_transform(trans)
-	pass
+	connect("boom",self,"_boom") #when boom sugnal received, call _boom
+	asteroidRadius=get_node("Sprite").texture.get_width()/2 * get_node("Sprite").scale
+	pass 
 	
+func _boom():
+	if size != Size.SMALL:
+		for i in range(0,3):
+			var asteroid
+			var offset_dir = PI * 2/3 * i
+			match size:  #do dif things depending on size
+				Size.MEDIUM:
+					asteroid=asteroidSmall.instance()
+				Size.LARGE:
+					asteroid=asteroidMedium.instance()
+			asteroid.position=position + asteroidRadius.rotated(offset_dir)
+			asteroid.linear_velocity=linear_velocity + Vector2(explode_dir, 0).rotated(offset_dir)
+			get_parent().add_child(asteroid)
+	queue_free() #delete
+	pass
+
 
 
 #only use when physics is NOT applied 

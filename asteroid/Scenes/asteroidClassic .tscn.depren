@@ -5,7 +5,8 @@
 [ext_resource path="res://Scenes/Missile/Missile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Asteroid Scene/AsteroidMedium.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Asteroid Scene/AsteroidLarge.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Asteroid Scene/AsteroidSmall .tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Asteroid Scene/AsteroidSmall.tscn" type="PackedScene" id=6]
+
 
 [node name="Root " type="Node2D"]
 

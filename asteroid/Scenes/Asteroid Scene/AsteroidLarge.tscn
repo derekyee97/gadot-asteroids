@@ -8,11 +8,12 @@ friction = 0.5
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 22.1863
+radius = 31.9598
 
 [node name="Asteroid " type="RigidBody2D"]
-position = Vector2( 203.557, 100.591 )
+position = Vector2( 204.475, 100.174 )
 collision_mask = 7
+mass = 2.0
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 linear_velocity = Vector2( 200, 1.097 )
@@ -23,7 +24,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="Asteroid_Collider" type="CollisionShape2D" parent="."]
