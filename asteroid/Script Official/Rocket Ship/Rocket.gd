@@ -1,7 +1,7 @@
 extends "res://Script Official/Weightless/Weightless.gd"
 
 var Missile = preload("res://Scenes/Missile/Missile.tscn") #loads scene we created so can use
-
+onready var ui_health = get_tree().current_scene.get_node("UI")
 export(float) var engine_forward= 200
 export(float) var engine_rotate= 2000
 export(float) var missile_speed= 300
@@ -14,6 +14,8 @@ var missile_recharge=0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#everytime in cotact w something godot store it
+	set_max_contacts_reported(1)
 	pass # Replace with function body.
 
 
@@ -49,6 +51,12 @@ func _process(delta):
 	pass
 
 func _integrate_forces(state):
+	#check for collision 
+	var contacts=state.get_contact_count()
+	for i in range(contacts):
+		var contact = state.get_contact_collider_object(i)
+		if contact.get_script().has_script_signal("explode"):
+			ui_health.decrease_health()
 	set_applied_force(forward.rotated(rotation))
 	set_applied_torque(rotate_dir * engine_rotate) #spin based on engine rotate 
 	._integrate_forces(state) #for inheritence, so do above things first, then do parent stuff
