@@ -9,7 +9,6 @@
 [node name="Root " type="Node2D"]
 
 [node name="Galaxy_background" type="Sprite" parent="."]
-visible = false
 position = Vector2( 692.672, 407.011 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
