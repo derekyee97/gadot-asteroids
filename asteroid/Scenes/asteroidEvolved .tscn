@@ -9,12 +9,12 @@
 [node name="Root " type="Node2D"]
 
 [node name="Galaxy_background" type="Sprite" parent="."]
-position = Vector2( 692.672, 407.011 )
+position = Vector2( 693.563, 407.011 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 
 [node name="Rocket Ship" parent="." instance=ExtResource( 2 )]
-position = Vector2( 514.235, 294.333 )
+position = Vector2( 489.545, 435.913 )
 z_index = 5
 engine_forward = 50.0
 engine_rotate = 200.0
@@ -25,4 +25,4 @@ engine_rotate = 200.0
 script = ExtResource( 3 )
 
 [node name="Asteroid " parent="Level" instance=ExtResource( 5 )]
-position = Vector2( 788.188, 216.737 )
+position = Vector2( 391.411, 169.068 )

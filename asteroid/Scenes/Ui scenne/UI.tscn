@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Kenney Rocket Square.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Ui scenne/healthBar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Script Official/UI Script/healthBar.gd" type="Script" id=3]
 [ext_resource path="res://Script Official/UI Script/score.gd" type="Script" id=4]
 [ext_resource path="res://Script Official/UI Script/UI.gd" type="Script" id=5]
 
@@ -28,14 +27,13 @@ margin_bottom = 52.4915
 grow_horizontal = 0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-text = "Score: 100"
+text = "Score: 0"
 align = 2
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-score = 100
+score = 0
 
 [node name="healthBar" parent="." instance=ExtResource( 2 )]
-script = ExtResource( 3 )
 health = 5
