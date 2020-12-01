@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Alien/alien_laser.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.25995, 8.1895 )
+scale = Vector2( 15.075, 0.542 )
+shape = SubResource( 1 )
