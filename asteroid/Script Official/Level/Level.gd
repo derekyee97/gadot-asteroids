@@ -16,6 +16,7 @@ export var asteroidMinSpeed = 100
 func _process(delta):
 	if get_child_count() == 0:
 		level +=1
+		UI.increase_level(level)
 		var avoidRadius = ship.position
 		var viewPort = get_viewport().get_visible_rect().size 	#create randome interger to load random asteroid
 		

@@ -41,3 +41,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="root/Classic Asteroids " to="root/Classic Asteroids " method="_on_Classic_Asteroids__pressed"]
+[connection signal="pressed" from="root/Edited Asteroids " to="root/Classic Asteroids " method="_on_Edited_Asteroids__pressed"]

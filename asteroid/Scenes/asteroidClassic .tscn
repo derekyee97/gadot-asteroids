@@ -9,7 +9,7 @@
 [node name="Root " type="Node2D"]
 
 [node name="Galaxy_background" type="Sprite" parent="."]
-position = Vector2( 692.672, 407.011 )
+position = Vector2( 693.302, 406.381 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 

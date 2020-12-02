@@ -2,6 +2,7 @@ extends Control
 
 onready var scoreNode = get_node("score")
 onready var HealthNode = get_node("healthBar")
+onready var levelNode= get_node("level")
 
 
 #increase health when clear health
@@ -21,3 +22,6 @@ func increase_score(amount):
 	scoreNode.score += amount
 	pass
 
+func increase_level(level):
+	levelNode.level+=level
+	pass

@@ -19,3 +19,8 @@ func _ready():
 func _on_Classic_Asteroids__pressed():
 	get_tree().change_scene("res://Scenes/asteroidClassic .tscn")
 	
+
+
+func _on_Edited_Asteroids__pressed():
+	get_tree().change_scene("res://Scenes/asteroidEvolved .tscn")
+	pass # Replace with function body.
