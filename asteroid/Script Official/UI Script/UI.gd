@@ -23,5 +23,5 @@ func increase_score(amount):
 	pass
 
 func increase_level(level):
-	levelNode.level+=level
+	levelNode.level=level
 	pass

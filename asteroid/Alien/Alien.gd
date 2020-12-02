@@ -22,7 +22,7 @@ func fire():
 	bullet.position= get_global_position()
 	bullet.player = player
 	get_parent().add_child(bullet)
-	$Timer.set_wait_time(1)
+	$Timer.set_wait_time(3)
 	
 
 func _on_Timer_timeout():
