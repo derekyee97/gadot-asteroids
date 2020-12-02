@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var move = Vector2.ZERO 
 var look_vec = Vector2.ZERO 

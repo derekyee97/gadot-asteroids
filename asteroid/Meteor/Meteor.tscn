@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Meteors/meteor1.png" type="Texture" id=1]
+[ext_resource path="res://Meteor/Meteor.gd" type="Script" id=2]
+
+[node name="Meteor" type="Area2D" groups=[
+"damageable",
+]]
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -97.7409, -236.708, 6.25909, -246.708, 80.2591, -216.708, 182.259, -192.708, 220.259, -100.708, 246.259, 27.2917, 230.259, 133.292, 134.259, 227.292, 48.2591, 245.292, -19.7409, 229.292, -111.741, 195.292, -181.741, 127.292, -245.741, 35.2917, -195.741, -78.7083, -171.741, -166.708 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 14.7157, -2.1022 )
+scale = Vector2( 30.2211, 27.6985 )
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

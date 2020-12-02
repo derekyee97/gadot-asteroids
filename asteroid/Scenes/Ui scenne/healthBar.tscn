@@ -16,7 +16,4 @@ __meta__ = {
 }
 health = null
 
-[node name="heathIcon" type="Control" parent="." instance=ExtResource( 1 )]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
+[node name="heathIcon" parent="." instance=ExtResource( 1 )]

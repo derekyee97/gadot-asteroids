@@ -51,6 +51,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level = 0
 
 [node name="healthBar" parent="." instance=ExtResource( 2 )]
 health = 3
