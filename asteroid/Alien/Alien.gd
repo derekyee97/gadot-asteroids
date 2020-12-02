@@ -7,6 +7,7 @@ var speed=1
 onready var ship = get_tree().current_scene.get_node("Player")
 
 
+
 func _physics_process(delta):
 	move=Vector2.ZERO
 	
@@ -23,5 +24,18 @@ func fire():
 	get_parent().add_child(bullet)
 	$Timer.set_wait_time(1)
 	
+
 func _on_Timer_timeout():
 	fire()
+	
+
+
+
+
+
+	
+	
+	
+	
+	
+

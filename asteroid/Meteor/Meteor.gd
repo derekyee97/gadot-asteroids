@@ -8,6 +8,7 @@ export var maxRotationRate: float = 25
 export var life: int = 20
 var speed: float = 0
 var rotationRate: float = 0
+
 func _ready():
 	speed = rand_range(minSpeed, maxSpeed)
 	rotationRate = rand_range(minRotationRate, maxRotationRate)
