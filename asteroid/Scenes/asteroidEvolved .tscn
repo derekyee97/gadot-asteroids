@@ -3,9 +3,11 @@
 [ext_resource path="res://Assets/Background/galaxy_background.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Rocket Scene/Rocket Ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script Official/Level/Level.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Alien/Alien .tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/notAlien/notAlien.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Asteroid Scene/AsteroidMedium.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Ui scenne/UI.tscn" type="PackedScene" id=7]
+
+
 
 [node name="Root " type="Node2D"]
 

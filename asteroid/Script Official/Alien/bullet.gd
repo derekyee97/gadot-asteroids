@@ -3,7 +3,7 @@ extends Node2D
 var move = Vector2.ZERO 
 var look_vec = Vector2.ZERO 
 var player = null
-onready var ship = get_tree().current_scene.get_node("Rocket Ship")
+onready var ship = get_tree().current_scene.get_node("Player")
 
 #signal explode
 

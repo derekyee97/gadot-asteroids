@@ -1,12 +1,13 @@
 extends Area2D
 
 var plBullet := preload ("res://Bullet/Bullet.tscn")
+
 onready var UI = get_tree().current_scene.get_node("UI")
 onready var firingPositions := $FiringPositions
 onready var fireDelayTimer := $FireDelayTimer
 
 export var life: int = 20
-var speed: float = 200
+var speed: float = 300
 var fireDelay: float = 0.3
 var vel:= Vector2(0, 0)
 

@@ -15,4 +15,3 @@ func _on_Bullet_area_entered(area):
 		area.damage(1)
 		queue_free()
 
-

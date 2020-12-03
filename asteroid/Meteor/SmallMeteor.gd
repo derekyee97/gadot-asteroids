@@ -1,9 +1,10 @@
+#meteor -2 health if hit rocket 
 extends Area2D
-#regular meteor 
-export var minSpeed: float = 10
-export var maxSpeed: float = 20
-export var minRotationRate: float = -25
-export var maxRotationRate: float = 25
+
+export var minSpeed: float = 25
+export var maxSpeed: float = 100
+export var minRotationRate: float = -10
+export var maxRotationRate: float =200
 onready var UI = get_tree().current_scene.get_node("UI")
 export var life: int = 20
 var speed: float = 0
@@ -28,5 +29,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Meteor_area_entered(area):
 	if area.is_in_group("Player"):
+		UI.decrease_health()
 		UI.decrease_health()
 		queue_free()

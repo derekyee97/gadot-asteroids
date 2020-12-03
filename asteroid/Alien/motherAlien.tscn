@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Alien/motherAlien.gd" type="Script" id=1]
+[ext_resource path="res://Alien/AlienHitbox.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Alien/mothership.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.7889
+
+[node name="ScarierAlien" type="KinematicBody2D" groups=[
+"damageable",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 115.866, 62.9057 )
+scale = Vector2( 0.195313, 0.191781 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 115.866, 62.9057 )
+scale = Vector2( 0.195313, 0.191781 )
+polygon = PoolVector2Array( -267.628, -209.368, -177.819, -245.022, -123.021, -248.123, -116.932, -224.87, -46.9116, -229.52, 12.4532, -282.228, 58.1187, -262.075, 56.5965, -227.97, 167.716, -221.769, 166.193, -289.979, 242.302, -234.171, 344.288, -241.922, 444.752, -165.962, 549.783, -155.11, 557.393, -48.1454, 560.438, -6.28964, 554.349, 23.1644, 478.24, 21.6142, 481.284, -15.5909, 456.93, -34.1935, 362.554, -15.5909, 327.544, 41.7669, 260.568, 72.7712, 126.617, 63.4699, 79.4292, 114.627, 44.4191, 154.932, 41.3747, 195.238, -10.3794, 164.234, -36.2565, 103.775, -71.2665, 128.579, -104.754, 92.924, -164.119, 65.0201, -247.839, 69.6707, -255.45, -4.73944, -355.914, -10.9403, -392.446, 21.6142, -467.033, 35.5661, -491.388, -1.63901, -494.432, -63.6475, -564.453, -113.254, -581.197, -136.508, -444.2, -226.42 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"damageable",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 114.388, 48.7613 )
+scale = Vector2( 7.4, 2.62227 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+[connection signal="input_event" from="." to="." method="_on_Alien_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
