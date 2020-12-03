@@ -4,7 +4,7 @@ var plMeteor := preload("res://Meteor/Meteor.tscn")
 var plsmallMeteor := preload("res://Meteor/SmallMeteor.tscn")
 var plFastMeteor := preload("res://Meteor/fastMeteor.tscn")
 var plAlien := preload("res://Alien/Alien.tscn")
-var Blackhole := preload("res://Assets/BlackHole/BlackHole.tscn")
+var Blackhole := preload("res://BlackHole/BlackHole.tscn")
 var plMotherAlien := preload("res://Alien/motherAlien.tscn")
 var extraLife := preload("res://Player/extraLife.tscn")
 
