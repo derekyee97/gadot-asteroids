@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Background/background.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Effects/particle.png" type="Texture" id=3]
 [ext_resource path="res://Level/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Ui scenne/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Audio/Audio.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Audio/OutThere.ogg" type="AudioStream" id=7]
 
 [node name="Variant" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 2.82842, -2.82843 )
@@ -37,3 +40,7 @@ position = Vector2( 510.44, 319.083 )
 script = ExtResource( 4 )
 
 [node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+autoplay = true

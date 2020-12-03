@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Background/galaxy_background.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Rocket Scene/Rocket Ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script Official/Level/Level.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/Audio.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Asteroid Scene/AsteroidLarge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Audio/OutThere.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/Ui scenne/UI.tscn" type="PackedScene" id=7]
 
 [node name="Root " type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Galaxy_background" type="Sprite" parent="."]
 position = Vector2( 693.302, 406.381 )
@@ -26,3 +29,7 @@ script = ExtResource( 3 )
 
 [node name="Asteroid " parent="Level" instance=ExtResource( 5 )]
 position = Vector2( 788.188, 216.737 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
