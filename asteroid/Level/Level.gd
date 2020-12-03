@@ -6,6 +6,7 @@ var plFastMeteor := preload("res://Meteor/fastMeteor.tscn")
 var plAlien := preload("res://Alien/Alien.tscn")
 var Blackhole := preload("res://Assets/BlackHole/BlackHole.tscn")
 var plMotherAlien := preload("res://Alien/motherAlien.tscn")
+var extraLife := preload("res://Player/extraLife.tscn")
 
 onready var UI = get_tree().current_scene.get_node("UI")
 
@@ -27,7 +28,7 @@ func _process(delta):
 		if level == 1:
 			for i in range (3):
 				randomize()
-				child=plAlien.instance()	
+				child=plMeteor.instance()	
 				var prep = Vector2()
 				var newPrep = Vector2(prep.x + randi()%1000,0)
 				child.set_position(newPrep)
@@ -59,19 +60,29 @@ func _process(delta):
 				var newPrep = Vector2(prep.x + randi()%1000,0)
 				child.set_position(newPrep)
 				add_child(child)
-			
+		
+		elif level == 5:
+			for i in range (2):
+				randomize()
+				child=extraLife.instance()					
+				var prep = Vector2()
+				var newPrep = Vector2(prep.x + randi()%1000,0)
+				child.set_position(newPrep)
+				add_child(child)
+		
 		else :	
 			var viewPort = get_viewport().get_visible_rect().size 	#create randome interger to load random asteroid
 			
 			for i in range (spawnObjects):
 				randomize()
-				match randi() % 6: 
+				match randi() % 7: 
 					0 : child = plMeteor.instance()
 					1 : child = plsmallMeteor.instance()
 					2 : child = plFastMeteor.instance()
 					3 : child = Blackhole.instance()
 					4 : child = plMotherAlien.instance()
 					5 : child = plAlien.instance()
+					6 : child = extraLife.instance()					
 					
 				var prep = Vector2()
 				var newPrep = Vector2(prep.x + randi()%1000,0)

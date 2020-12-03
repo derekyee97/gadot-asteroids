@@ -1,16 +1,28 @@
 extends Area2D
+#regular meteor 
+export var minSpeed: float = 10
+export var maxSpeed: float = 20
+export var minRotationRate: float = -25
+export var maxRotationRate: float = 25
+onready var UI = get_tree().current_scene.get_node("UI")
 
+var speed: float = 0
+var rotationRate: float = 0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	speed = rand_range(minSpeed, maxSpeed)
+	rotationRate = rand_range(minRotationRate, maxRotationRate)
+	
+func _physics_process(delta):
+	rotation_degrees += rotationRate * delta
+	position.y += speed * delta
+
+	
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_ExtraLife_area_entered(area):
+	if area.is_in_group("Player"):
+		UI.increase_health()
+		queue_free()

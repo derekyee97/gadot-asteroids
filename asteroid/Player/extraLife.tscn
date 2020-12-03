@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Meteor/fastMeteor.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Meteors/fast_meteor.png" type="Texture" id=2]
+[ext_resource path="res://Player/extraLife.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Ships/spaceShips_003.png" type="Texture" id=2]
 
-[node name="fastMeteor" type="Area2D" groups=[
-"damageable",
-]]
+[node name="ExtraLife" type="Area2D"]
 rotation = 0.811578
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
@@ -14,10 +12,11 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 34.342, -27.5526, 82.9013, 34.8807, 160.2, 109.206, 195.876, 155.783, 191.912, 188.487, 141.371, 178.577, 37.315, 90.3771, -115.3, -60.2558, -232.239, -210.889, -187.436, -211.182 )
+rotation = -2.98023e-08
+polygon = PoolVector2Array( 28.2695, 25.8962, 48.2273, -39.6487, 35.2605, -41.3932, 10.9801, -29.5036, 10.7183, -39.5002, 7.66085, -44.8386, -6.97203, -46.5395, -11.9396, -29.3202, -29.8263, -43.857, -48.1315, -42.544, -32.181, 25.395, -21.3077, 26.7776, -13.8014, 42.8366, 2.13554, 46.5873, 13.7328, 43.7828, 18.2511, 25.3249 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -6.01428, -8.03239 )
-scale = Vector2( 22.1572, 20.381 )
-[connection signal="area_entered" from="." to="." method="_on_Meteor_area_entered"]
+position = Vector2( 0.253967, -3.51718 )
+scale = Vector2( 7.6265, 7.03773 )
+[connection signal="area_entered" from="." to="." method="_on_ExtraLife_area_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
