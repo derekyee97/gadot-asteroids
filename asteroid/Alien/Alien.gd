@@ -28,14 +28,3 @@ func fire():
 func _on_Timer_timeout():
 	fire()
 	
-
-
-
-
-
-	
-	
-	
-	
-	
-
