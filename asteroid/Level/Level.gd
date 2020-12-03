@@ -26,9 +26,9 @@ func _process(delta):
 		UI.increase_level(level)
 		
 		if level == 1:
-			for i in range (3):
+			for i in range (1):
 				randomize()
-				child=plMeteor.instance()	
+				child=plMotherAlien.instance()	
 				var prep = Vector2()
 				var newPrep = Vector2(prep.x + randi()%1000,0)
 				child.set_position(newPrep)

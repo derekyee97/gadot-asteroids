@@ -14,7 +14,7 @@ var vel:= Vector2(0, 0)
 func _process(delta):
 	if Input.is_action_pressed("shoot") and fireDelayTimer.is_stopped():
 		fireDelayTimer.start(fireDelay)
-		
+		$shootAudio.play()
 		
 		for child in firingPositions.get_children():
 			var bullet = plBullet.instance()

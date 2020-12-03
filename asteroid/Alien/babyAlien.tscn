@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Alien/baby alien.png" type="Texture" id=1]
-[ext_resource path="res://Script Official/Alien/alien.gd" type="Script" id=2]
-[ext_resource path="res://Alien/AlienHitbox.gd" type="Script" id=3]
+[ext_resource path="res://Alien/babyAlien.gd" type="Script" id=2]
+[ext_resource path="res://Alien/BabyAlienHitbox.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.62795
